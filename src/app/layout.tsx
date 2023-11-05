@@ -1,7 +1,10 @@
+import NextAuthProvider from '../context/session'
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
 import { Toaster } from 'sonner'
 import './globals.css'
+import Navbar from '@/components/Navbar'
+import ModeBtn from '@/components/ModeBtn'
 
 const inter = Noto_Sans({ style: 'normal', weight: '300', preload: false })
 
@@ -17,13 +20,13 @@ export const metadata: Metadata = {
    ],
 }
 
-export default function RootLayout({
+export default async function RootLayout({
    children,
 }: {
    children: React.ReactNode
 }) {
    return (
-      <html lang="en">
+      <html>
          <head>
             <meta charSet="utf-8" />
             <meta
@@ -34,8 +37,14 @@ export default function RootLayout({
          </head>
 
          <body className={inter.className}>
-            <Toaster position="top-right" expand={true} richColors />
-            {children}
+            <NextAuthProvider>
+               <Toaster position="top-right" expand={true} richColors />
+
+               <Navbar />
+               <ModeBtn />
+
+               {children}
+            </NextAuthProvider>
          </body>
       </html>
    )
