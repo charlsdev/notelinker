@@ -1,32 +1,25 @@
-"use client"
+'use client'
 
 import { useEffect, useState } from 'react'
 
 const ModeBtn = () => {
-   const [mode, setMode] = useState('light')
-
-   const changeTheme = () => {
-      const storage = window.localStorage
-
-      storage.setItem('theme', mode === 'light' ? 'dark' : 'light')
-      setMode(mode === 'light' ? 'dark' : 'light')
-
-      if (mode === 'light') {
-         document.documentElement.classList.add('dark')
-      } else {
-         document.documentElement.classList.remove('dark')
-      }
-   }
+   const [mode, setMode] = useState(localStorage.getItem('theme') || 'light')
 
    useEffect(() => {
-      if (localStorage.theme === 'dark') {
-         setMode('dark')
-         document.documentElement.classList.add('dark')
+      const className = 'dark'
+
+      if (mode === 'dark') {
+         document.documentElement.classList.add(className)
       } else {
-         setMode('light')
-         document.documentElement.classList.remove('dark')
+         document.documentElement.classList.remove(className)
       }
-   }, [])
+   }, [mode])
+
+   const changeTheme = () => {
+      const newMode = mode === 'light' ? 'dark' : 'light'
+      localStorage.setItem('theme', newMode)
+      setMode(newMode)
+   }
 
    return (
       <button
