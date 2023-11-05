@@ -23,7 +23,7 @@ const Dropdown = ({ session }: Session) => {
    }
 
    return (
-      <div className="flex items-center md:order-2">
+      <>
          <button
             type="button"
             className="mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 md:mr-0"
@@ -43,7 +43,9 @@ const Dropdown = ({ session }: Session) => {
             />
          </button>
          <div
-            className={`z-50 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700 ${isDropdownOpen ? 'block' : 'hidden'}`}
+            className={`z-50 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700 ${
+               isDropdownOpen ? 'block' : 'hidden'
+            }`}
             id="user-dropdown"
          >
             <div className="px-4 py-3">
@@ -78,32 +80,7 @@ const Dropdown = ({ session }: Session) => {
                </li>
             </ul>
          </div>
-
-         <button
-            data-collapse-toggle="navbar-user"
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
-            aria-controls="navbar-user"
-            aria-expanded="false"
-         >
-            <span className="sr-only">Open main menu</span>
-            <svg
-               className="h-5 w-5"
-               aria-hidden="true"
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 17 14"
-            >
-               <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 1h15M1 7h15M1 13h15"
-               />
-            </svg>
-         </button>
-      </div>
+      </>
    )
 }
 

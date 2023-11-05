@@ -18,6 +18,7 @@ const ModeBtn = () => {
    const changeTheme = () => {
       const newMode = mode === 'light' ? 'dark' : 'light'
       localStorage.setItem('theme', newMode)
+
       setMode(newMode)
    }
 
