@@ -37,14 +37,16 @@ export default async function RootLayout({
          </head>
 
          <body className={inter.className}>
-            <NextAuthProvider>
-               <Toaster position="top-right" expand={true} richColors />
+            <div className='bg-gray-50 dark:bg-gray-900'>
+               <NextAuthProvider>
+                  <Toaster position="top-right" expand={true} richColors />
 
-               <Navbar />
-               <ModeBtn />
+                  <Navbar />
+                  <ModeBtn />
 
-               {children}
-            </NextAuthProvider>
+                  {children}
+               </NextAuthProvider>
+            </div>
          </body>
       </html>
    )

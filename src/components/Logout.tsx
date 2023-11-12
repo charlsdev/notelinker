@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 
 const Logout = () => {
    const closeSession = () => {
-      toast.success('Cerrando la sesión 👋')
+      toast.info('Cerrando la sesión 👋')
 
       signOut({
          callbackUrl: '/',

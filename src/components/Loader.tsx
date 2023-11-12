@@ -1,3 +1,5 @@
+'use client'
+
 import { miyagi } from 'ldrs'
 
 export default function LoaderUI() {

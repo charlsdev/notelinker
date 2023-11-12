@@ -10,9 +10,6 @@ export default function WelcomePage() {
    // const session = await getServerSession(authOptions as any)
    const { data: session, status } = useSession()
 
-   // console.log(session)
-   // console.log(status)
-
    if (status === 'loading') {
       return <LoaderUI />
    }

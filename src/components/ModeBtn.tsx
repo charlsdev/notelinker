@@ -3,7 +3,15 @@
 import { useEffect, useState } from 'react'
 
 const ModeBtn = () => {
-   const [mode, setMode] = useState(localStorage.getItem('theme') || 'light')
+   const [mode, setMode] = useState('light')
+
+   useEffect(() => {
+      const storedMode = localStorage.getItem('theme')
+
+      if (storedMode) {
+         setMode(storedMode)
+      }
+   }, [])
 
    useEffect(() => {
       const className = 'dark'
