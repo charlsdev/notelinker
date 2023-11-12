@@ -1,12 +1,14 @@
 'use client'
 
-import LoaderUI from '@/components/Loader'
 import { signIn, useSession } from 'next-auth/react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
+
+const LoaderUI = dynamic(() => import('@/components/Loader'), { ssr: false })
 
 export default function LoginPage() {
    const router = useRouter()

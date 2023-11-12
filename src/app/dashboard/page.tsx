@@ -1,10 +1,11 @@
-// import { authOptions } from '../api/auth/[...nextauth]/route'
-// import { getServerSession } from 'next-auth/next'
-
 'use client'
 
-import LoaderUI from '@/components/Loader'
+// import { authOptions } from '../api/auth/[...nextauth]/route'
+// import { getServerSession } from 'next-auth/next'
 import { useSession } from 'next-auth/react'
+import dynamic from 'next/dynamic'
+
+const LoaderUI = dynamic(() => import('@/components/Loader'), { ssr: false })
 
 export default function WelcomePage() {
    // const session = await getServerSession(authOptions as any)

@@ -82,8 +82,6 @@ export default function RegisterPage() {
       }
    })
 
-
-
    if (status === 'loading') {
       return <LoaderUI />
    }

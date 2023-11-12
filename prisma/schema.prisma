@@ -17,7 +17,7 @@ model User {
    lastname  String
    acceso    String   @default("user")
    date      DateTime @default(now())
-   profile   String  @default("profile.svg")
+   profile   String   @default("profile.svg")
    password  String
    terminos  Boolean  @default(false)
    createdAt DateTime @default(now())
