@@ -5,3 +5,10 @@ export interface Session {
       image: string
    }
 }
+
+export interface NavItemsItf {
+   title: string
+   icon: React.ReactNode
+   link: string
+   auth: boolean
+}

@@ -13,7 +13,7 @@ const Logout = () => {
       })
    }
 
-   return <span onClick={closeSession}>Logout</span>
+   return <span onClick={closeSession}>Sign Out</span>
 }
 
 export default Logout
