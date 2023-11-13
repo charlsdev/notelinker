@@ -55,9 +55,6 @@ export const authOptions = {
       }),
    ],
    callbacks: {
-      async redirect() {
-         return '/'
-      },
       async session({ token, session }: CustomSession) {
          if (token) {
             session.user.id = token.id

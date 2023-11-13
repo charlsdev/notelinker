@@ -1,10 +1,9 @@
 import NextAuthProvider from '../context/session'
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
+import Navbar from '@/components/Navbar'
 import { Toaster } from 'sonner'
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import ModeBtn from '@/components/ModeBtn'
 
 const inter = Noto_Sans({ style: 'normal', weight: '300', preload: false })
 
@@ -37,14 +36,16 @@ export default async function RootLayout({
          </head>
 
          <body className={inter.className}>
-            <div className='bg-gray-50 dark:bg-gray-900'>
+            <div className="bg-gray-50 dark:bg-gray-900">
                <NextAuthProvider>
                   <Toaster position="top-right" expand={true} richColors />
 
-                  <Navbar />
-                  <ModeBtn />
+                  <section className="app">
+                     <Navbar />
+                     {/* <ModeBtn /> */}
 
-                  {children}
+                     {children}
+                  </section>
                </NextAuthProvider>
             </div>
          </body>
