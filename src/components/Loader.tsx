@@ -1,14 +1,14 @@
 'use client'
 
-import { miyagi } from 'ldrs'
+import { helix } from 'ldrs'
 
 export default function LoaderUI() {
-   miyagi.register()
+   helix.register()
 
    return (
       <div className="loaderCSS">
          <div className="titleLoader">Cargando ...</div>
-         <l-miyagi size="100" stroke="8" speed="1.75" color="#fff"></l-miyagi>
+         <l-helix size="75" speed="2.5" color="#ffbe76"></l-helix>
       </div>
    )
 }
