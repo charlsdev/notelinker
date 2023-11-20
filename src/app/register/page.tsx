@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
@@ -34,8 +34,6 @@ interface IFormInput {
    confPass: string
    terms: boolean
 }
-
-const LoaderUI = dynamic(() => import('@/components/Loader'), { ssr: false })
 
 export default function RegisterPage() {
    const router = useRouter()
@@ -82,14 +80,14 @@ export default function RegisterPage() {
       }
    })
 
-   if (status === 'loading') {
-      return <LoaderUI />
-   }
+   //    return <LoaderUI />
+   useEffect(() => {
+      if (status === 'loading') return
 
-   if (session) {
-      router.push('/dashboard')
-      return
-   }
+      if (session) {
+         router.push('/dashboard')
+      }
+   }, [session, status, router])
 
    return (
       <>

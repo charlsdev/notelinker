@@ -8,7 +8,7 @@ import './globals.css'
 const inter = Noto_Sans({ style: 'normal', weight: '300', preload: false })
 
 export const metadata: Metadata = {
-   title: "NoteDev'S",
+   title: "NoteLinker",
    description: 'Aplicación de notas',
    keywords: 'notas, app, aplicacion, note, notes, noteapp, notedevs',
    authors: [
@@ -32,11 +32,11 @@ export default async function RootLayout({
                name="viewport"
                content="width=device-width, initial-scale=1"
             />
-            <link rel="icon" href="/charlsdev.ico" />
+            <link rel="icon" href="/NoteLinker.ico" />
          </head>
 
          <body className={inter.className}>
-            <div className="bg-gray-50 dark:bg-gray-900">
+            <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
                <NextAuthProvider>
                   <Toaster position="top-right" expand={true} richColors />
 

@@ -4,11 +4,11 @@ import { signIn, useSession } from 'next-auth/react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
-const LoaderUI = dynamic(() => import('@/components/Loader'), { ssr: false })
+// const LoaderUI = dynamic(() => import('@/components/Loader'), { ssr: false })
 
 export default function LoginPage() {
    const router = useRouter()
@@ -17,7 +17,7 @@ export default function LoginPage() {
    const {
       register,
       handleSubmit,
-      formState: { errors }
+      formState: { errors },
    } = useForm()
 
    const onSubmit = handleSubmit(async data => {
@@ -33,10 +33,9 @@ export default function LoginPage() {
          if (resp?.error) {
             toast.warning(resp.error)
          } else {
-            toast.success("Bienvenido a NoteDev'S 🎉")
+            toast.success('Bienvenido a NoteLinker 🎉')
 
             router.push('/dashboard')
-            router.refresh()
          }
       } catch (e) {
          console.error(e)
@@ -47,14 +46,14 @@ export default function LoginPage() {
       }
    })
 
-   if (status === 'loading') {
-      return <LoaderUI />
-   }
+   //    return <LoaderUI />
+   useEffect(() => {
+      if (status === 'loading') return
 
-   if (session) {
-      router.push('/dashboard')
-      return
-   }
+      if (session) {
+         router.push('/dashboard')
+      }
+   }, [session, status, router])
 
    return (
       <>
