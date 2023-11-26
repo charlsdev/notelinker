@@ -36,7 +36,6 @@ yarn-error.log*
 next-env.d.ts
 
 # My config
-prisma/migrations
 pnpm-lock.yaml
 package-lock.json
 .env
