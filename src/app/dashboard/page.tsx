@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic'
 
 const LoaderUI = dynamic(() => import('@/components/Loader'), { ssr: false })
 
-export default function WelcomePage() {
+function WelcomePage() {
    // const session = await getServerSession(authOptions as any)
    const { data: session, status } = useSession()
 
@@ -121,3 +121,5 @@ export default function WelcomePage() {
       </>
    )
 }
+
+export default WelcomePage

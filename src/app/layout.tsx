@@ -4,11 +4,12 @@ import { Noto_Sans } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import { Toaster } from 'sonner'
 import './globals.css'
+import Provider from '@/context/Provider'
 
 const inter = Noto_Sans({ style: 'normal', weight: '300', preload: false })
 
 export const metadata: Metadata = {
-   title: "NoteLinker",
+   title: 'NoteLinker',
    description: 'Aplicación de notas',
    keywords: 'notas, app, aplicacion, note, notes, noteapp, notedevs',
    authors: [
@@ -36,15 +37,15 @@ export default async function RootLayout({
          </head>
 
          <body className={inter.className}>
-            <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
                <NextAuthProvider>
                   <Toaster position="top-right" expand={true} richColors />
 
                   <section className="app">
-                     <Navbar />
-                     {/* <ModeBtn /> */}
-
-                     {children}
+                     <Provider>
+                        <Navbar />
+                        {children}
+                     </Provider>
                   </section>
                </NextAuthProvider>
             </div>
