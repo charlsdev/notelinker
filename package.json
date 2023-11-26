@@ -15,17 +15,18 @@
    "dependencies": {
       "@nextui-org/react": "^2.2.9",
       "@prisma/client": "5.6.0",
-      "antd": "^5.11.2",
+      "antd": "^5.11.4",
       "argon2": "^0.31.2",
       "dayjs": "^1.11.10",
       "framer-motion": "^10.16.5",
       "ldrs": "^1.0.1",
       "next": "14.0.3",
       "next-auth": "^4.24.5",
+      "next-nprogress-bar": "^2.1.2",
       "react": "^18",
       "react-dom": "^18",
       "react-hook-form": "^7.48.2",
-      "sonner": "^1.2.0"
+      "sonner": "^1.2.3"
    },
    "devDependencies": {
       "@types/node": "^20",
