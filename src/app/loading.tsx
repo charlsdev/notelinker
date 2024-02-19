@@ -1,5 +1,3 @@
 export default function LoaderUI() {
-   return (
-      <div>Cargando...</div>
-   )
+   return <div>Cargando...</div>
 }

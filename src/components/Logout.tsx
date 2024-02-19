@@ -9,7 +9,7 @@ const Logout = () => {
 
       signOut({
          callbackUrl: '/',
-         redirect: true
+         redirect: true,
       })
    }
 

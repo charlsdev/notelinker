@@ -1,7 +1,6 @@
 'use client'
 
 import { signIn, useSession } from 'next-auth/react'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'

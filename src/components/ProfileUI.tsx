@@ -39,7 +39,7 @@ const ProfileUI = ({ session }: Props) => {
                   textValue="Description"
                >
                   <p className="font-bold">Bienvenido:</p>
-                  <Divider className='mt-2' />
+                  <Divider className="mt-2" />
                </DropdownItem>
                <DropdownItem
                   key="profile"

@@ -1,4 +1,4 @@
-import NextAuthProvider from '../context/session'
+import NextAuthProvider from '@/context/session'
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
 import Navbar from '@/components/Navbar'

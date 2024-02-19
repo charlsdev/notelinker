@@ -31,7 +31,7 @@ const ModeBtn = () => {
    }
 
    return (
-      <div className="flex flex-row items-center gap-2 max-md:hidden cursor-pointer">
+      <div className="flex cursor-pointer flex-row items-center gap-2 max-md:hidden">
          {mode === 'light' ? (
             <svg
                xmlns="http://www.w3.org/2000/svg"

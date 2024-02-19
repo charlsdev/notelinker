@@ -11,7 +11,7 @@ const LoaderUI = dynamic(() => import('@/components/Loader'), { ssr: false })
 
 function WelcomePage() {
    // const session = await getServerSession(authOptions as any)
-   const { data: session, status } = useSession()
+   const { /*data: session,*/ status } = useSession()
 
    const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
@@ -21,14 +21,14 @@ function WelcomePage() {
 
    return (
       <>
-         <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-2 border-b-2 border-zinc-700 dark:border-zinc-400">
+         <div className="container mx-auto flex items-center justify-between border-b-2 border-zinc-700 px-4 py-4 dark:border-zinc-400 md:px-2">
             <h1 className="text-2xl font-bold">Dashboard</h1>
 
             <Button
                size="sm"
                onPress={onOpen}
                // color="danger"
-               className="px-5 font-bold text-white bg-red-600 rounded-md hover:bg-red-700 dark:bg-green-600 dark:hover:bg-green-700"
+               className="rounded-md bg-red-600 px-5 font-bold text-white hover:bg-red-700 dark:bg-green-600 dark:hover:bg-green-700"
                startContent={
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -50,13 +50,13 @@ function WelcomePage() {
             </Button>
          </div>
 
-         <div className="container mx-auto px-4 md:px-2 py-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-               <div className="bg-white dark:bg-gray-700 shadow rounded-md p-4">
+         <div className="container mx-auto px-4 py-4 md:px-2">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+               <div className="rounded-md bg-white p-4 shadow dark:bg-gray-700">
                   <div className="flex items-center justify-between">
                      <div className="flex items-center">
                         <div className="flex flex-col">
-                           <span className="text-xs font-medium text-gray-500 uppercase">
+                           <span className="text-xs font-medium uppercase text-gray-500">
                               Total
                            </span>
                            <span className="text-lg font-bold text-gray-700 dark:text-white">
@@ -64,7 +64,7 @@ function WelcomePage() {
                            </span>
                         </div>
                      </div>
-                     <div className="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
+                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100">
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
                            width="15"
@@ -83,11 +83,11 @@ function WelcomePage() {
                      </div>
                   </div>
                </div>
-               <div className="bg-white dark:bg-gray-700 shadow rounded-md p-4">
+               <div className="rounded-md bg-white p-4 shadow dark:bg-gray-700">
                   <div className="flex items-center justify-between">
                      <div className="flex items-center">
                         <div className="flex flex-col">
-                           <span className="text-xs font-medium text-gray-500 uppercase">
+                           <span className="text-xs font-medium uppercase text-gray-500">
                               Total
                            </span>
                            <span className="text-lg font-bold text-gray-700 dark:text-white">
@@ -95,7 +95,7 @@ function WelcomePage() {
                            </span>
                         </div>
                      </div>
-                     <div className="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
+                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100">
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
                            width="15"
@@ -117,7 +117,11 @@ function WelcomePage() {
             </div>
          </div>
 
-         <ModalAddUI isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} />
+         <ModalAddUI
+            isOpen={isOpen}
+            onOpen={onOpen}
+            onOpenChange={onOpenChange}
+         />
       </>
    )
 }

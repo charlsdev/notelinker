@@ -16,14 +16,18 @@ interface ModalAddUIProps {
    onOpenChange: () => void
 }
 
-export default function ModalAddUI({ isOpen, onOpen, onOpenChange }: ModalAddUIProps) {
+export default function ModalAddUI({
+   isOpen,
+   //onOpen,
+   onOpenChange,
+}: ModalAddUIProps) {
    return (
       <>
          <Modal
             isOpen={isOpen}
             onOpenChange={onOpenChange}
             placement="top-center"
-            backdrop='opaque'
+            backdrop="opaque"
             isDismissable={false}
          >
             <ModalContent>

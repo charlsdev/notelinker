@@ -1,7 +1,6 @@
 'use client'
 
 import { useSession } from 'next-auth/react'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -91,7 +90,7 @@ export default function RegisterPage() {
 
    return (
       <>
-         <div className="mx-auto flex min-h-screen items-center justify-center px-6 lg:py-0 flex-1">
+         <div className="mx-auto flex min-h-screen flex-1 items-center justify-center px-6 lg:py-0">
             <div className="my-6 w-full rounded-lg bg-white shadow dark:border dark:border-gray-700 dark:bg-gray-800 sm:max-w-md">
                <div className="space-y-4 p-6 sm:p-8 md:space-y-6">
                   <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl">
@@ -351,7 +350,7 @@ export default function RegisterPage() {
                      <div className="flex items-start">
                         <div className="flex h-5 items-center">
                            <input
-                              className="h-4 w-4 rounded border border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 cursor-pointer"
+                              className="h-4 w-4 cursor-pointer rounded border border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800"
                               id="terms"
                               type="checkbox"
                               {...register('terms', {
